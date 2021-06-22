@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { css } from "@emotion/css";
+import "./App.css";
+import { Retriever } from "./Evaluator";
+import { UrlAdder } from "./UrlAdder";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      className={css`
+        text-align: center;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+      `}
+    >
+      <div className={css`
+        flex: 1;
+        border: 20px solid black;
+      `}>
+      <UrlAdder />
+      </div>
+      <div className={css`
+        flex: 1;
+        border: 20px solid black;
+      `}>
+      <Retriever />
+      </div>
     </div>
   );
 }
